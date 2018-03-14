@@ -1,0 +1,58 @@
+#!/usr/bin/env node
+
+const app = require('../app')
+const http = require('http')
+
+let port = 3000
+app.set('port', port)
+
+let server = http.createServer(app)
+
+// socket
+const io = require('socket.io')(server)
+io.on('connection', (socket) => {
+  socket.on('disconnect', () => {
+    console.log('someone is disconnect')
+  })
+  console.log('someon is connect')
+})
+
+// 数据库
+// const UserDAO = require('../dao/user')
+// let userDao = UserDAO()
+// 添加数据
+// dao.add({
+//   account: 13263940776,
+//   password: 'password',
+//   gender: 'male',
+//   nickname: 'omygod',
+//   autograph: 'i want be a AI robot like alphaGo',
+//   avatar: '',
+//   birthday: '2018-04-23'
+// }, (res) => {
+//   console.log(res)
+// })
+
+// 查询全部数据
+// userAao.find({}, (res) => {
+//   console.log('---------')
+//   console.log(res)
+// })
+
+// 查询部分数据
+// dao.find({
+//  account: '13263940776'
+// }, (res) => {
+//   console.log('---------')
+//   console.log(res)
+// })
+
+// 删除数据
+// userDao.delete({
+//   id: 4
+// }, (res) => {
+//   console.log('---------')
+//   console.log(res)
+// })
+
+server.listen(port)

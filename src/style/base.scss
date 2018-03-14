@@ -1,0 +1,17 @@
+@import './_variable.scss';
+@import './animation.scss';
+
+// functions
+@mixin borderBtn($width, $height, $color) {
+    display: block;
+    width: $width;
+    height: $height;
+    line-height: $height;
+    text-align: center;
+    color: $color;
+    border: 3px solid $color;
+
+    &:hover{
+      color: $color;
+    }
+}

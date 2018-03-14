@@ -1,0 +1,73 @@
+@import './_variable.scss';
+.rotate {
+    transform-origin: 30px 40px;
+    animation: rotate .3s forwards ease;
+    &.anim-reverse {
+        animation: rotate-reverse .4s forwards ease;
+    }
+}
+
+.bg-extend {
+    animation: bg-extend .3s forwards ease;
+    &.anim-reverse {
+        animation: bg-extend .4s forwards ease;
+    }
+}
+
+// animation class
+.turnCorrect {
+    animation: turnCorrect 1s linear forwards;
+}
+
+// animation
+@keyframes turnCorrect {
+    0% {
+        border-color: $cbd;
+        color: $cbd;
+    }
+    20% {
+        border-color: $amaranth;
+        color: $amaranth;
+    }
+    100% {
+        background: $amaranth;
+        border-color: $amaranth;
+        color: #fff;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg)
+    }
+    100% {
+        transform: rotateZ(135deg)
+    }
+}
+
+@keyframes rotate-reverse {
+    0% {
+        transform: rotateZ(135deg)
+    }
+    100% {
+        transform: rotateZ(0deg)
+    }
+}
+
+@keyframes bg-extend {
+    0% {
+        background: #fff;
+    }
+    100% {
+        background: $amaranth;
+    }
+}
+
+@keyframes bg-extend-reverse {
+    0% {
+        background: $amaranth;
+    }
+    100% {
+        background: #fff;
+    }
+}

@@ -1,0 +1,21 @@
+.one-line {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.contact-bottom-border {
+  position: relative;
+
+  &:not(:last-child) {
+    &:after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        background: rgba(0, 0, 0, .1);
+        height: 1px;
+        right: 0;
+        left: 30px;
+      }
+  }
+}

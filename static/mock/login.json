@@ -1,0 +1,12 @@
+{
+  "code": 200,
+  "data": {
+    "account": 17679206207,
+    "avatar": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4048446268,4268796217&fm=27&gp=0.jpg",
+    "nickname": "啦啦啦",
+    "autograph": "Sometime is ever, Sometime is never~",
+    "gender": "male",
+    "birthday": "1997-01-30"
+  },
+  "msg": "请求成功"
+}
