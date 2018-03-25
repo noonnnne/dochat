@@ -13,13 +13,7 @@
 
     <div class="communication-left-box overflow-a">
       <template v-if="currentTab === 'message-box'">
-        <v-message active='active'></v-message>
-        <v-message></v-message>
-        <v-message></v-message>
-        <v-message></v-message>
-        <v-message></v-message>
-        <v-message></v-message>
-        <v-message></v-message>
+        <div class="px-font-16">消息列表</div>
       </template>
       <template v-else-if="currentTab === 'contact-box'">
         <v-contact></v-contact>

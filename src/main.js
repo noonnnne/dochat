@@ -4,8 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/index'
+import { Message } from 'element-ui'
 
 Vue.config.productionTip = false
+
+Vue.use(Message)
+
+Vue.prototype.$message = Message
 
 /* eslint-disable no-new */
 new Vue({

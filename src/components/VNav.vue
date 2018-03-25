@@ -2,25 +2,25 @@
   <ul class="v-nav px-padding-lr30">
     <li
       class="ib-bottom iconfont px-font-30 cursor-p icon-xiaoxi"
-      :class="[activeNav === 'message-box' ? 'color-fff' : 'color-cf' ]"
+      :class="whiteOrGray('message-box')"
       @click="doNavTab('message')"
     >
     </li>
     <li
       class="ib-bottom iconfont px-font-30 cursor-p icon-qunzu"
-      :class="[activeNav === 'contact-box' ? 'color-fff' : 'color-cf' ]"
+      :class="whiteOrGray('contact-box')"
       @click="doNavTab('contact')"
     >
     </li>
     <li
       class="ib-bottom iconfont px-font-32 cursor-p icon-tongxunlu"
-      :class="[activeNav === 'group-box' ? 'color-fff' : 'color-cf' ]"
+      :class="whiteOrGray('group-box')"
       @click="doNavTab('group')"
     >
     </li>
     <li
       class="ib-bottom iconfont px-font-32 cursor-p icon-gongnengguanli"
-      :class="[activeNav === 'function-box' ? 'color-fff' : 'color-cf' ]"
+      :class="whiteOrGray('function-box')"
       @click="doNavTab('function')"
     >
     </li>
@@ -32,7 +32,12 @@ export default {
   props: {
     activeNav: String
   },
+  computed: {
+  },
   methods: {
+    whiteOrGray(name) {
+      return this.$props.activeNav === name ? 'color-fff' : 'color-cf'
+    },
     doNavTab(name) {
       this.$emit('solveNavSelect', name)
     }

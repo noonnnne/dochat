@@ -44,21 +44,20 @@ module.exports = () => {
 
   return {
     // 增
-    add(data, callback) {
-      console.log('----------')
-      console.log(data)
+    add(data, cb) {
       sequelize.sync()
         .then(() => {
           User.create(data)
               .then((person) => {
-                callback && callback(person)
+                cb && cb(person)
               })
               .catch((err) => {
                 if (err) {
-                  callback({
-                    code: '',
+                  const data = {
+                    code: 1001,
                     msg: '帐号已存在'
-                  })
+                  }
+                  cb && cb(data)
                 }
               })
         })

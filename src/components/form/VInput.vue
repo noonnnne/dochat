@@ -11,6 +11,7 @@
     @click="focusInput"
   >
     <input
+      :class="[color === 'white' ? 'color-fff' : '']"
       :type="type"
       @focus="toggleFocus"
       @blur="toggleFocus"

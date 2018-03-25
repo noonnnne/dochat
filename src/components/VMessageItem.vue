@@ -1,19 +1,28 @@
 <template>
   <div class="vmessage-item"
       :class="{'word' : type === 'word',
-              'time' : type === 'time'}">
+              'time' : type === 'time'}"
+  >
     <div :class="{'me' : me === 'true'}"
       class="message-detail-item px-margin-t30 px-padding-lr30 overflow-h"
-      v-if="type === 'word'">
-      <v-avatar type="online" show-status="false" size="small"></v-avatar>
+      v-if="type === 'word'"
+    >
+      <v-avatar
+        type="online"
+        size="small"
+        :show-status="false"
+      >
+      </v-avatar>
       <div class="message-item-box ib-top px-font-14 px-padding-10 px-margin-b15">
         佛魔修成聚一身，盖世无双绝尘伦~
       </div>
     </div>
 
-    <div :class="{'me' : me === 'true'}"
-          class="message-detail-item px-line-40 px-font-12 text-center color-ccc"
-          v-if="type === 'time'">
+    <div
+      class="message-detail-item px-line-40 px-font-12 text-center color-ccc"
+      :class="{'me' : me === 'true'}"
+      v-if="type === 'time'"
+    >
       10:30
     </div>
   </div>

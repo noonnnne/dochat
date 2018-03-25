@@ -1,7 +1,7 @@
 <template>
   <div class="chat font-0">
-    <communication-side></communication-side>
-    <main-content></main-content>
+    <communication-side/>
+    <main-content/>>
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
   name: 'chat',
   computed: {
     ...mapState([
+      'socket',
       'currentUser'
     ])
   },
@@ -27,7 +28,12 @@ export default {
     MainContent
   },
   created() {
-    console.log(this.currentUser)
+    // eslint-disable-next-line
+    const socket = io('localhost:3000')
+    this.setState({
+      key: 'socket',
+      value: socket
+    })
   }
 }
 </script>

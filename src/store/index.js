@@ -6,10 +6,11 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     currentUser: null,
+    socket: null,
     sessionList: [],
     singleChatList: [], // 单聊
     groupChatList: [], // 群聊
-    currentSessionId: null
+    currentSessionId: -1
   },
   getters: {
     // get current session id

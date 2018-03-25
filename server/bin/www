@@ -14,7 +14,10 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('someone is disconnect')
   })
-  console.log('someon is connect')
+  socket.on('message', (msg) => {
+    console.log(msg)
+  })
+  console.log('someone is connect')
 })
 
 // 数据库
@@ -54,5 +57,14 @@ io.on('connection', (socket) => {
 //   console.log('---------')
 //   console.log(res)
 // })
+
+const FriendDAO = require('../dao/friends')
+let friendDAO = FriendDAO()
+friendDAO.add({
+  id: `g-${new Date().getTime()}${Math.floor(Math.random() * 1000) + 1000}`,
+  'user_account': '17679206207',
+  'friend_account': '13263940776',
+  remark: ''
+})
 
 server.listen(port)

@@ -113,6 +113,7 @@ export default {
       'currentUser'
     ])
   },
+
   methods: {
     ...mapMutations([
       'setState'
@@ -155,7 +156,7 @@ export default {
         // mock: true
       }).then((res) => {
         let data = res.data
-        console.log(data)
+
         if (data.data && res.status === 200) {
           this.setState({
             key: 'currentUser',
@@ -163,6 +164,11 @@ export default {
           })
           this.$router.push({
             name: 'Chat'
+          })
+        } else {
+          this.$message({
+            message: res.msg,
+            type: 'error'
           })
         }
       })
@@ -173,9 +179,20 @@ export default {
         password: this.regist.password
       }).then((res) => {
         let data = res.data
-        console.log(data)
+        if (data.code === 1001) {
+          this.$message({
+            message: data.msg,
+            type: 'error'
+          })
+        } else {
+          this.isLogin = true
+        }
       })
     }
+  },
+
+  mounted () {
+
   }
 }
 </script>
