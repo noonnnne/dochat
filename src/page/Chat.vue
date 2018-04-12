@@ -12,21 +12,25 @@ import MainContent from '../components/MainContent'
 
 export default {
   name: 'chat',
+
   computed: {
     ...mapState([
       'socket',
       'currentUser'
     ])
   },
+
   methods: {
     ...mapMutations([
       'setState'
     ])
   },
+
   components: {
     CommunicationSide,
     MainContent
   },
+
   created() {
     // eslint-disable-next-line
     const socket = io('localhost:3000')

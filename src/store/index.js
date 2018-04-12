@@ -21,9 +21,9 @@ const store = new Vuex.Store({
   mutations: {
     setState(state, payload) {
       if (payload.key === 'array') {
-        for (let key in payload.value) {
+        Object.keys(key => {
           state[key] = payload.value[key]
-        }
+        })
       } else {
         state[payload.key] = payload.value
       }

@@ -88,7 +88,7 @@ import resource from '../resource/index'
 
 export default {
   name: 'login',
-  data () {
+  data() {
     return {
       login: {
         account: '',
@@ -119,18 +119,16 @@ export default {
       'setState'
     ]),
     validForm(name) {
-      let form = this[name]
+      const form = this[name]
       if (form) {
-        let properties = Object.keys(form)
-        this[name].valid = properties.every(item => {
-          return item === 'valid' ? true : this[name][item]
-        })
+        const properties = Object.keys(form)
+        this[name].valid = properties.every(item => (item === 'valid' ? true : this[name][item]))
       }
     },
     solveInput(data) {
-      let currentForm = this[data.form]
+      const currentForm = this[data.form]
       if (currentForm) {
-        let property = Object.keys(currentForm)
+        const property = Object.keys(currentForm)
         if (property && (property.indexOf(data.name) !== -1)) {
           this[data.form][data.name] = data.value
           this.validForm(data.form)
@@ -154,8 +152,8 @@ export default {
         account: this.login.account,
         password: this.login.password
         // mock: true
-      }).then((res) => {
-        let data = res.data
+      }).then(res => {
+        const data = res.data
 
         if (data.data && res.status === 200) {
           this.setState({
@@ -177,8 +175,8 @@ export default {
       resource.regist({
         account: this.regist.account,
         password: this.regist.password
-      }).then((res) => {
-        let data = res.data
+      }).then(res => {
+        const data = res.data
         if (data.code === 1001) {
           this.$message({
             message: data.msg,
@@ -191,7 +189,7 @@ export default {
     }
   },
 
-  mounted () {
+  mounted() {
 
   }
 }

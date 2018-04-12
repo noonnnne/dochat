@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import LoginRegist from '@/page/LoginRegist'
-import Chat from '@/page/Chat'
+/* eslint-disable */
+const LoginRegist = r => require.ensure([], () => r(require('../page/LoginRegist')), 'login-regist')
+const Chat = r => require.ensure([], () => r(require('../page/Chat.vue')), 'chat')
 
 Vue.use(Router)
 
