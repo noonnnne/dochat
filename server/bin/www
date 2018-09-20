@@ -1,70 +1,56 @@
 #!/usr/bin/env node
+const fs = require('fs')
+const path = require('path')
+const mongoose = require('mongoose')
 
+const config = require('../config')
 const app = require('../app')
-const http = require('http')
+const checkVersion = require('../../build/check-versions')
 
-let port = 3000
-app.set('port', port)
+const Group = require('../models/group')
+const Socket = require('../models/socket')
+checkVersion()
 
-let server = http.createServer(app)
+const createDirectory = (directoryPath) => {
+  if (!fs.existsSync(directoryPath)) {
+    fs.mkdirSync(directoryPath)
+  }
+}
 
-// socket
-const io = require('socket.io')(server)
-io.on('connection', (socket) => {
-  socket.on('disconnect', () => {
-    console.log('someone is disconnect')
+const port = config.port
+
+mongoose.Promise = Promise
+
+mongoose.connect(config.mongodb, async err => {
+  if (err) {
+    console.log(`
+      ---------------------
+      connect database error
+    `)
+    return process.exit(1)
+  }
+
+  const group = await Group.findOne({ isDefault: true })
+  if (!group) {
+    const defaultGroup = await Group.create({
+      name: 'dochat',
+      avatar: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4048446268,4268796217&' +
+          'fm=27&gp=0.jpg',
+      intro: 'freedom~~~',
+      isDefault: true,
+      pinyin: 'dochat'
+    })
+
+    if (!defaultGroup) {
+      console.error('create default group fail');
+      return process.exit(1);
+    }
+  }
+
+  createDirectory(path.join(__dirname, '../../public'))
+
+  app.listen(port, async () => {
+    await Socket.remove()
+    console.log(`> server listen on http://localhost:${port}`)
   })
-  socket.on('message', (msg) => {
-    console.log(msg)
-  })
-  console.log('someone is connect')
 })
-
-// 数据库
-// const UserDAO = require('../dao/user')
-// let userDao = UserDAO()
-// 添加数据
-// dao.add({
-//   account: 13263940776,
-//   password: 'password',
-//   gender: 'male',
-//   nickname: 'omygod',
-//   autograph: 'i want be a AI robot like alphaGo',
-//   avatar: '',
-//   birthday: '2018-04-23'
-// }, (res) => {
-//   console.log(res)
-// })
-
-// 查询全部数据
-// userAao.find({}, (res) => {
-//   console.log('---------')
-//   console.log(res)
-// })
-
-// 查询部分数据
-// dao.find({
-//  account: '13263940776'
-// }, (res) => {
-//   console.log('---------')
-//   console.log(res)
-// })
-
-// 删除数据
-// userDao.delete({
-//   id: 4
-// }, (res) => {
-//   console.log('---------')
-//   console.log(res)
-// })
-
-const FriendDAO = require('../dao/friends')
-let friendDAO = FriendDAO()
-friendDAO.add({
-  id: `g-${new Date().getTime()}${Math.floor(Math.random() * 1000) + 1000}`,
-  'user_account': '17679206207',
-  'friend_account': '13263940776',
-  remark: ''
-})
-
-server.listen(port)

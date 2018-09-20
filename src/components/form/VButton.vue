@@ -3,7 +3,7 @@
     <a
       href="javascript:void(0)"
       class="button"
-      :class="[ valid ? animation : '' ,fullWidth === 'true' ? 'fullWidth' : '' ]"
+      :class="[ valid ? animation : '' ,fullWidth  ? 'fullWidth' : '' ]"
       @click="clickHandler">
       {{ name }}
     </a>
@@ -17,7 +17,7 @@ export default {
     name: String,
     valid: Boolean,
     animation: String,
-    fullWidth: String
+    fullWidth: Boolean
   },
   methods: {
     clickHandler() {

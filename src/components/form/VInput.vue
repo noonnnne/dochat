@@ -33,19 +33,23 @@ export default {
     type: String,
     color: String
   },
+
   data() {
     return {
       isFocus: false,
       hasValue: false
     }
   },
+
   methods: {
     toggleFocus() {
       this.isFocus = !this.isFocus
     },
+
     focusInput() {
       this.$el.children[0].focus()
     },
+
     judgeInput(e) {
       const v = e.target.value
       const reg = new RegExp(this.$props.reg)
@@ -71,9 +75,6 @@ export default {
         this.hasValue = false
       }
     }
-  },
-  mounted() {
-
   }
 }
 </script>

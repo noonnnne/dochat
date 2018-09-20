@@ -10,7 +10,10 @@ module.exports = {
     browser: true
   },
   globals: {
-    __LOCAL__: false
+    __LOCAL__: false,
+    io: false,
+    PinyinHelper: false,
+    PinyinFormat: false
   },
   extends: 'airbnb-base',
   // required to lint *.vue files
@@ -71,10 +74,12 @@ module.exports = {
     ],
     'max-len': [
       'error', {
-        code: 100,
+        code: 120,
         tabWidth: 2
       }
     ],
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    'no-param-reassign': 'off',
+    'quote-props': 'off'
   }
 }

@@ -10,16 +10,26 @@
 .bg-leave { background-color: $leave; }
 .bg-active { background-color: $active; }
 .bg-bgbg { background-color: #ebebeb; }
+.bg-c3 { background: #c3c3c3; }
+.bg-f5 { background: #f5f5f5; }
 .bg-opacity-1 { background: rgba(0, 0, 0, .1); }
 .color-amaranth { color: $amaranth; }
+.color-c333 { color: #333; }
+.color-c888 { color: #888; }
+.color-c999 { color: #999; }
 .color-green { color: $green; }
 .color-opacity-gray { color: rgba(255, 255, 255, .75); }
+.color-f1 { color: #f1f1f1; }
+.color-e1 { color: #e1e1e1; }
 .color-cf { color: #cfcfcf; }
 .color-bd { color: $cbd; }
+.color-link { color: $link; }
 .color-msg-tip { color: #32B587; }
 .left--15 { left: -15px; }
 .left--18 { left: -18px; }
 .left--20 { left: -20px; }
+.min-height-300 { min-height: 300px; }
+.padding-0 { padding: 0 !important; }
 .padding-tb10 { padding-top: 10px; padding-bottom: 10px; }
 .padding-tb12 { padding-top: 12px; padding-bottom: 12px;}
 .percent-top-50 { top: 50%; }
@@ -53,10 +63,21 @@
 .px-height-110 { height: 110px; }
 .px-height-160 { height: 160px; }
 .px-height-180 { height: 180px; }
+.px-height-200 { height: 200px; }
 .px-height-220 { height: 220px; }
+.px-height-300 { height: 300px; }
 .px-height-420 { height: 420px; }
 .px-height-480 { height: 480px; }
 .px-height-540 { height: 540px; }
+.px-margin--t1 { margin-top: -1px; }
+.px-margin--t2 { margin-top: -2px; }
+.px-margin-t2 { margin-top: 2px; }
+.px-margin-t3 { margin-top: 3px; }
+.px-margin-t4 { margin-top: 4px; }
+.px-margin-t5 { margin-top: 5px; }
+.px-margin-t6 { margin-top: 6px; }
+.px-line-28 { line-height: 28px; }
+.px-font-21 { font-size: 21px; }
 .shadow { box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .15) }
 .shadow-gray { box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .1) }
 .shadow-bottom { box-shadow: 0px 3px 3px rgba(0, 0, 0, .1) }
@@ -72,5 +93,7 @@
 .radius-px-br8 { border-bottom-right-radius: 8px; }
 .radius-px-tl8 { border-top-left-radius: 8px }
 .radius-px-bl8 { border-bottom-left-radius: 8px; }
-.flex-center { display: flex; justify-content: center; }
+.flex-center { display: flex; justify-content: center; flex-direction: column; }
 .flex-1 { flex: 1; }
+.vertical-center { top: 50%; transform: translateY(-50%); }
+.z-index-20 { z-index: 20; }

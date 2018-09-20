@@ -1,0 +1,61 @@
+{
+  "code": 200,
+  "success": true,
+  "data": [
+    {
+      "sessionId": "single_17679206207",
+      "userId": "17679206207",
+      "type": 1,
+      "lastMsg": {
+        "type": "plain",
+        "content": "hello world",
+        "sendTime": "1524017260657"
+      },
+      "fromUser": {
+        "account": "13007230048",
+        "avatar": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4048446268,4268796217&fm=27&gp=0.jpg",
+        "nickname": "凡生",
+        "autograph": "Sometime is ever,sometime is never!",
+        "gender": "female",
+        "birthday": "1998-03-08"
+      }
+    },
+    {
+      "sessionId": "single_15117911464",
+      "userId": "17679206207",
+      "type": 1,
+      "lastMsg": {
+        "type": "plain",
+        "content": "hello world",
+        "sendTime": "1524017260657"
+      },
+      "fromUser": {
+        "account": "15117911464",
+        "avatar": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4048446268,4268796217&fm=27&gp=0.jpg",
+        "nickname": "张学友",
+        "autograph": "你的眼泪背叛了你的心",
+        "gender": "male",
+        "birthday": "1958-03-08"
+      }
+    },
+    {
+      "sessionId": "single_13007230048",
+      "userId": "17679206207",
+      "type": 1,
+      "lastMsg": {
+        "type": "plain",
+        "content": "hello world",
+        "sendTime": "1524017260657"
+      },
+      "fromUser": {
+        "account": "13007230048",
+        "avatar": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4048446268,4268796217&fm=27&gp=0.jpg",
+        "nickname": "张敬轩",
+        "autograph": "欢迎大家来听灵魂相认~",
+        "gender": "male",
+        "birthday": "1978-03-08"
+      }
+    }
+  ],
+  "msg": "请求成功"
+}
